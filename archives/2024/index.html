@@ -1,197 +1,276 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-    <meta name="keywords" content="hexo, autumn" />
-    <title>
-        Zhijun (Nicholas) Huang
-    </title>
-    <!-- favicon -->
-    
-    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico" />
-     
+  <meta charset="utf-8">
+  
+  <title>AI, Machine Learning, FinTech, AIOps, Software-Archives: 2024 | Zhijun (Nicholas) Huang</title>
+
+  <!-- keywords -->
+  
+    <meta name="keywords" content="AI, Machine Learning, FinTech, AIOps, Software">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Hi! I am Nicholas! Welcome to my personal blog!">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zhijun (Nicholas) Huang">
+<meta property="og:url" content="https://nic397.github.io/archives/2024/index.html">
+<meta property="og:site_name" content="Zhijun (Nicholas) Huang">
+<meta property="og:description" content="Hi! I am Nicholas! Welcome to my personal blog!">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Nicholas Huang">
+<meta property="article:tag" content="AI, Machine Learning, FinTech, AIOps, Software">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Zhijun (Nicholas) Huang" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
 <link rel="stylesheet" href="/css/style.css">
 
+  
+  
 
-    <!-- highlight -->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css" />
-    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
-    <script>
-        hljs.initHighlightingOnLoad()
-    </script>
-    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script>
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 
-    <script>
-        infiniteScroll()
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 
-        window.addEventListener('DOMContentLoaded', function () {
-            const [
-                mainTitle,
-                mobileMenu,
-                mobileMainTitle,
-                mobileMenuBtn,
-                ipadMenuBtn,
-                aside,
-                closeBtn,
-            ] = getEle(
-                '#main-title',
-                '.mobile-menu',
-                '.mobile-menu h3',
-                '.mobile-menu button',
-                '.ipad-menu',
-                'aside',
-                'aside .close',
-            )
-            const io = new IntersectionObserver(entries => {
-                if (entries[0].intersectionRatio <= 0) {
-                    mobileMainTitle.classList.remove('invisibile')
-                } else {
-                    mobileMainTitle.classList.add('invisibile')
-                }
-            })
-            io.observe(mainTitle)
 
-            clickToggleAside(mobileMenuBtn)
-            clickToggleAside(ipadMenuBtn)
-            clickToggleAside(closeBtn, false)
-
-            const isMenuVisible = window.getComputedStyle(mobileMenu).display !== 'none'
-            if (isMenuVisible) document.body.style.background = 'none'
-
-            function getEle(...args) {
-                return args.map(arg => document.querySelector(arg))
-            }
-
-            function clickToggleAside(btn, show = true) {
-                btn.addEventListener('click', function () {
-                    if (show) {
-                        aside.style.display = 'block'
-                    } else {
-                        aside.style.display = 'none'
-                    }
-                })
-            }
-        })
-    </script>
+  
 <meta name="generator" content="Hexo 7.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
 
-<body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
-    <div class="container">
-        <header class="header">
-    <nav class="mobile-menu" style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
-        <h3 class="invisibile">
-            <a href="/" class="logo">
-                Zhijun (Nicholas) Huang
-            </a>
-        </h3>
-        <button class="menu">menu</button>
-    </nav>
+		<hgroup>
+			<h1 class="header-author"><a href="/">Nicholas Huang</a></h1>
+		</hgroup>
 
-    <button class="ipad-menu menu">menu</button>
+		
+			<p class="header-subtitle"></p>
+		
 
-    <h1 class="title" id="main-title">
-        <a href="/" class="logo">
-            Zhijun (Nicholas) Huang
-        </a>
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap">
+  
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2024" class="archive-year">2024</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2024/06/09/about/" class="archive-article-date">
+  	<time datetime="2024-06-09T20:52:22.000Z" itemprop="datePublished">Jun 9</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2024/06/09/about/">
+        About
+        
+      </a>
     </h1>
-    <h2 class="desc">
-        CUHK · Cornell · BILL
-    </h2>
+  
 
-    <div class="links">
-        <ul>
-            
-            <li>
-                <a target="_blank" rel="noopener" href="https://github.com/NIC397">
-                    Github
-                </a>
-            </li>
-            
-            <li>
-                <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/nicholas-zhijun-huang/">
-                    LinkedIn
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-</header>
-        <main class="main">
-            
-<section class="posts">
+        <div class="article-info info-on-left">
+          
+          
+
+          
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
     
-        <article class="post">
-            
-                    <h1 class="post-title">
-                        <a href="/2024/06/09/about/">
-                            About
-                        </a>
-                    </h1>
-
-                    <ul class="post-date">
-                        <li>
-                            June 9, 2024
-                        </li>
-                        <li>
-                            Nicholas Huang
-                        </li>
-                    </ul>
-                    
-                    <div class="post-content ">
-                        
-                            <a href="/2024/06/09/about/" class="more-link">Continue reading</a>
-                    </div>
-        </article>
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2024/06/09/hello-world/" class="archive-article-date">
+  	<time datetime="2024-06-09T18:58:27.902Z" itemprop="datePublished">Jun 9</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2024/06/09/hello-world/">
+        Hello World
         
-        <article class="post">
-            
-                    <h1 class="post-title">
-                        <a href="/2024/06/09/hello-world/">
-                            Hello World
-                        </a>
-                    </h1>
+      </a>
+    </h1>
+  
 
-                    <ul class="post-date">
-                        <li>
-                            June 9, 2024
-                        </li>
-                        <li>
-                            Nicholas Huang
-                        </li>
-                    </ul>
-                    
-                    <div class="post-content ">
-                        
-                            <a href="/2024/06/09/hello-world/" class="more-link">Continue reading</a>
-                    </div>
-        </article>
-        
-</section>
+        <div class="article-info info-on-left">
+          
+          
 
-        </main>
-        <aside class="aside">
-            <div class="close"></div>
-            <section class="aside-section">
-                
-    <h1>Categories</h1>
+          
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
 
     
 
-            </section>
-            <section class="aside-section">
-                
-
-            </section>
-            <section class="aside-section tag">
-                
-    <h1>Tags</h1>
-
-    
-
-            </section>
-        </aside>
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2024 Nicholas Huang
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
     </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: false,
+		isArchive: true,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
 </body>
-
 </html>
