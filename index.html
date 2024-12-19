@@ -1,391 +1,632 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  <title>Personal Blog-Zhijun (Nicholas) Huang</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Webpage</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-  <!-- keywords -->
-  
-    <meta name="keywords" content="Personal Blog">
-  
+        /* 1. Hero-header */
+        .hero-header {
+            background: linear-gradient(to bottom right, #003973, #E5E5BE);
+            color: #fff;
+            padding: 10px 50px;
+            text-align: center;
+        }
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hi! I am Nicholas! Welcome to my personal blog!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zhijun (Nicholas) Huang">
-<meta property="og:url" content="https://nic397.github.io/index.html">
-<meta property="og:site_name" content="Zhijun (Nicholas) Huang">
-<meta property="og:description" content="Hi! I am Nicholas! Welcome to my personal blog!">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="Zhijun (Nicholas) Huang">
-<meta property="article:tag" content="Personal Blog">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternative" href="/atom.xml" title="Zhijun (Nicholas) Huang" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/img/favicon.ico">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+        .hero-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            margin: 0 0 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
 
-  
-  
+        /* 2. Degrees */
+        .degrees {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 20px 0;
+            padding: 10px 0;
+        }
+        .degrees h2 {
+            font-size: 1.2em;
+            margin: 0;
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        .undergrad-link {
+            color: inherit;
+            text-decoration: underline;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        .undergrad-link:hover {
+            color: #750f6d; /* Light salmon color */
+            text-shadow: 0 0 5px rgba(255, 160, 122, 0.7); /* Glow effect */
+        }
+        .grad-link {
+            color: inherit;
+            text-decoration: underline;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        .grad-link:hover {
+            color: #B31B1B; /* Gold color */
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.7); /* Glow effect */
+        }
+        
+        /* 3. Nav Bar */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            background: #003973; /* Deep blue background for nav bar */
+            padding: 10px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            align-items: center; /* Vertically center items */
+        }
 
-  
-<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+        /* Styling for Navigation Bar Icons */
+        .sticky-nav a {
+            font-size: 20px; /* Adjust size of icons */
+            color: #ffffff; /* White color for icons */
+            text-decoration: none;
+            margin: 0 10px; /* Space between icons */
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
 
-  
-<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+        .sticky-nav a:hover {
+            transform: scale(1.2); /* Slight zoom effect on hover */
+            color: #007BFF; /* Light blue color on hover */
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .nav-logo img {
+            width: 24px; /* Adjust size of logos */
+            height: 24px;
+            margin: 0 10px; /* Space between logos */
+        }
+
+        .nav-logo:hover {
+            background: #ffffff; /* White background on hover */
+            border-radius: 5px;
+            transform: scale(1.1); /* Slight zoom effect on hover */
+        }
 
 
-  
-<meta name="generator" content="Hexo 7.2.0"></head>
+        /* 4. Content */
+        .section {
+            font-family: 'Montserrat', sans-serif; /* Apply Montserrat font to all content in sections */
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            line-height: 1.6;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .section .content {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .section .text {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .section h2 {
+            text-align: left;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            color: #003973;
+        }
+        .section ul, .section li {
+            font-family: 'Montserrat', sans-serif;
+            color: #333; /* Ensure consistent text color */
+        }
+        .section li {
+            margin-bottom: 20px; /* Increase space between bullet points */
+        }
+
+        .section a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .section a:hover {
+            text-decoration: underline;
+        }
+
+        .section img {
+            max-width: 30%;
+            height: auto;
+            border-radius: 8px;
+            margin: 30px 20px 0;
+        }
+
+        @media (max-width: 600px) {
+            .section .content {
+                flex-direction: column;
+            }
+            
+            .section img {
+                max-width: 100%;
+                margin: 20px 0;
+            }
+
+            .section .text {
+                padding-right: 0;
+            }
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e5f4ff;
+            color: #003973;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .tags-container .tag:hover {
+            background-color: #003973;
+            color: #fff;
+            cursor: pointer;
+        }
+
+
+        footer {
+            background-color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
 <body>
-  <div id="container">
-    <div id="particles-js"></div>
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-				<img lazy-src="/img/profile_photo.jpg" class="js-avatar">
-			
-		</a>
-
-		<hgroup>
-			<h1 class="header-author"><a href="/">Zhijun (Nicholas) Huang</a></h1>
-		</hgroup>
-
-		
-			<p class="header-subtitle"></p>
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">Home</a></li>
-				        
-							<li><a href="/archives">Archives</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="half-header-menu">
-						<a class="hide">Home</a>
-						<a>Tags</a>
-						<a>Links</a>
-						<a>About</a>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="https://github.com/NIC397" title="github">github</a>
-					        
-								<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/nicholas-zhijun-huang/" title="linkedin">linkedin</a>
-					        
-						</div>
-						<!-- music -->
-						
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Info/" style="font-size: 10px;">Info</a>
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/NIC397">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.linkedin.com/in/nicholas-zhijun-huang/">LinkedIn</a>
-			        
-			        </div>
-				</section>
-				
-
-				
-				
-				<section class="switch-part switch-part4">
-				
-					<div id="js-aboutme">Hi! I am Nicholas. Welcome to my blog!</div>
-				</section>
-				
-			</div>
-		</div>
-	</header>				
-</div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide"></h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-				<img lazy-src="/img/profile_photo.jpg" class="js-avatar">
-			</div>
-			<hgroup>
-			  <h1 class="header-author"></h1>
-			</hgroup>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">Home</a></li>
-		        
-					<li><a href="/archives">Archives</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/NIC397" title="github">github</a>
-			        
-						<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/nicholas-zhijun-huang/" title="linkedin">linkedin</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
-</nav>
-      <div class="body-wrap">
-  
-    <article id="post-about" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2024/06/09/about/" class="article-date">
-  	<time datetime="2024-06-09T20:52:22.886Z" itemprop="datePublished">2024-06-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/06/09/about/">
-        About
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Hi! I am Nicholas. Welcome to my blog!</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Info/" rel="tag">Info</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-education" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2024/06/09/education/" class="article-date">
-  	<time datetime="2024-06-09T22:38:14.862Z" itemprop="datePublished">2024-06-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/06/09/education/">
-        Education
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://www.cuhk.edu.cn/en">CUHK </a>- Bachelor’s in Financial Engineering</p>
-<p><a target="_blank" rel="noopener" href="https://tech.cornell.edu/">Cornell</a> - Dual Master’s in Information Systems &amp; Information Science</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Info/" rel="tag">Info</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-work" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2024/06/09/work/" class="article-date">
-  	<time datetime="2024-06-09T23:01:51.963Z" itemprop="datePublished">2024-06-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/06/09/work/">
-        Work Experience
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://www.bill.com/">BILL</a> - Machine Learning Engineer Intern</p>
-<p><a target="_blank" rel="noopener" href="https://www.huawei.com/en/">Huawei</a> - Technical Research Engineer Intern</p>
-<p><a target="_blank" rel="noopener" href="http://sribd.cn/en">Shenzhen Research Institute of Big Data</a> - AI Software Research Assistant</p>
-<p><a target="_blank" rel="noopener" href="https://www.szse.cn/English/">Shenzhen Stock Exchange</a> - Data Center Engineer Intern</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Info/" rel="tag">Info</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-  
-</div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-      <div class="footer-left">
-        &copy; 2024 Zhijun (Nicholas) Huang
-      </div>
-        <div class="footer-right">
-          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+    <!-- 1. Hero-Header -->
+    <div class="hero-header">
+        <h1>Zhijun (Nicholas) Huang</h1>
+        <div class="degrees">
+            <h2>Bachelor's in Financial Engineering @ <a href="https://www.cuhk.edu.cn/en" class="undergrad-link">CUHK</a></h2>
+            <h2>Dual M.S. in Information Systems @ <a href="https://tech.cornell.edu/" class="grad-link">Cornell</a></h2>
         </div>
     </div>
-  </div>
-</footer>
+
+    <!-- 2. Nav Bar -->
+    <nav class="sticky-nav">
+        <a href="#about" title="About Me">👤About</a>
+        <a href="#personal_projects" title="Personal Projects">💻Projects</a>
+        <a href="#industry_experience" title="Industry Experience">🏢Experience</a>
+        <a href="#publications" title="Patent & Publication">📄Publication</a>
+        <a href="#courses" title="Core Courses">📚Courses</a>
+        <a href="#skills" title="Skills & Interests">🛠️Skills</a>
+
+        <!-- External Links -->
+        <a href="https://github.com/NIC397" class="nav-logo" target="_blank" title="GitHub">
+            <img src="images/github_logo.webp" alt="GitHub Logo">
+        </a>
+        <a href="https://www.linkedin.com/in/nicholas-zhijun-huang/" class="nav-logo" target="_blank" title="LinkedIn">
+            <img src="images/linkedin_logo.png" alt="LinkedIn Logo">
+        </a>
+    </nav>
+
+    
+    <!-- 3. About -->
+    <div class="section" id="about">
+        <div class="content">
+            <div class="text">
+                <h2>About Me</h2>
+                <p>
+                    Zhijun Huang is a Master's student at <a href="https://www.cornell.edu" target="_blank">Cornell University</a> (<a href="https://tech.cornell.edu/" target="_blank">Cornell Tech</a>), specializing in Information Systems and Information Science. He is passionate about the applications of AI and Machine Learning across diverse industries, with hands-on experience in AI for Software Engineering and AI for Finance. His research interests encompass AIOps, FinTech, and a broad spectrum of AI applications, including Deep Learning, Natural Language Processing, and Computer Vision. Recently, he has been actively engaged in learning and developing Large Language Models.
+                </p>
+            </div>
+            <img src="images/professional_image.jpg" alt="Your Professional Image">
+        </div>
     </div>
     
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    <!-- 4. Personal Projects -->
+    <div class="section" id="personal_projects">
+        <div class="content">
+            <div class="text">
+                <h2>Personal Projects</h2>
+                <p>The projects showcased below are self-initiated and inspired by my personal interests. They represent my ongoing efforts to learn, experiment, and apply technology to areas that intrigue me, while continually improving my skills and understanding.</p>
+                <ul>
+                    <!-- Original Version -->
+                    <li>
+                        <strong><h3>SentenSnap (Original Version)</h3></strong>
+                        An interactive web application that combines natural language processing and AI-powered image generation to provide a unique and educational experience. Users can explore random quotes, learn word definitions, and generate artistic images based on sample sentences.
+                        <br>
+                        <strong>Repository:</strong> <a href="https://github.com/NIC397/SentenSnap" target="_blank">GitHub Repo</a> |
+                        <strong>Demo:</strong> <a href="https://drive.google.com/file/d/1bS60yIwac_HjMKcWQC2d3y5IwRJ2ALyW/view?usp=sharing" target="_blank">Video Link</a>
+                    </li>
 
+                    <!-- Deployed Version -->
+                    <li>
+                        <strong><h3>SentenSnap (Deployed Version)</h3></strong>
+                        This application is a modified version of the <a href="https://github.com/NIC397/SentenSnap" target="_blank" title="SentenSnap">SentenSnap</a> repository, originally built to operate with locally installed large language models (LLMs).. The current version leverages <a href="https://streamlit.io/" target="_blank">Streamlit</a> for its user interface and integrates the <a href="https://ai.google.dev/gemini-api/docs/api-key" target="_blank">Gemini API</a> to deliver a fully deployed, cloud-based experience. While the image generation functionality from the original version has been omitted, this modification focuses on providing seamless access to motivational quotes and interactive word snapshots without requiring local LLM installations.
+                        <br>
+                        <strong>Repository:</strong> <a href="https://github.com/NIC397/SentenSnap_Deploy" target="_blank">GitHub Repo</a> |
+                        <strong>Deployed App:</strong> <a href="https://sentensnap.streamlit.app/" target="_blank">APP</a>
+                    </li>
 
+                    <!-- Additional Projects -->
+                    <li>
+                        <strong><h3>Modified Snake Game</h3></strong>
+                        This is an exciting variation of the classic Snake game, implemented in Python using the Turtle graphics library. In this version, you control a snake that must eat numbered food items while avoiding a pursuing monster.
+                        <br>
+                        <strong>Repository:</strong> <a href="https://github.com/NIC397/snake-game" target="_blank">GitHub Repo</a>
+                    </li>
 
-<script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: false,
-		animate: true,
-		isHome: true,
-		isPost: false,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
-</script>
+                    <li>
+                        <strong><h3>Number Guessing Game</h3></strong>
+                        A simple yet engaging Number Guessing Game with a graphical user interface built using Python and Tkinter.
+                        <strong>Repository:</strong> <a href="https://github.com/NIC397/number-guessing-game" target="_blank">GitHub Repo</a>
+                    </li>
+                </ul>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="9" y1="18" x2="15" y2="18"></line>
+                <line x1="10" y1="22" x2="14" y2="22"></line>
+                <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
+            </svg>
+        </div>
+    </div>
 
-<script src="/js/main.js"></script>
+    <!-- 5. Publications & Patent -->
+    <div class="section" id="publications">
+        <div class="content">
+            <div class="text">
+                <h2>Patent & Publication</h2>
+                <ul>
+                    <!-- Patent -->
+                    <li>
+                        <strong><a href="https://pss-system.cponline.cnipa.gov.cn/conventionalSearch" target="_blank">Patent: "A Root Cause Analysis System for Software Test Cases"</a></strong> - 
+                        Published on June 23, 2023, in China (Publication No. CN116302984A).
+                    </li>
 
+                    <!-- Publication -->
+                    <li>
+                        <strong><a href="https://doi.org/10.1109/TR.2023.3340020" target="_blank">"Revisiting Log Parsing: The Present, the Future, and the Uncertainties"</a></strong> - 
+                        Li, Z., Fu, Q., Huang, Z., et al. Published in <em>IEEE Transactions on Reliability</em>, 2024.
+                    </li>
+                </ul>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003973" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22l1.18-7.86-5-4.87 6.91-1L12 2z"></path>
+            </svg>
+        </div>
+    </div>
 
+    <!-- 6. Industry Experience -->
+    <div class="section" id="industry_experience">
+        <div class="content">
+            <div class="text">
+                <h2>Industry Experience</h2>
+                <ul>
+                    <!-- BILL Operations -->
+                    <li>
+                        <strong><a href="https://www.bill.com/hello" target="_blank">BILL Operations, LLC</a></strong>  
+                        <div><em>Draper, UT, USA | May 2024 - Aug 2024</em></div>
+                        <ul>
+                            <li>Extracted and analyzed billions of transactions using efficient SQL queries and various visualizations like word clouds.</li>
+                            <li>Built pipelines for traditional ML models (e.g., XGBoost, Autoencoder) for transaction categorization; achieved >90% accuracy.</li>
+                            <li>Designed and implemented LLM for transaction categorization; maintained >90% accuracy and contributed a ~32% lift in coverage.</li>
+                        </ul>
+                    </li>
 
+                    <!-- Huawei Technologies -->
+                    <li>
+                        <strong><a href="https://www.huawei.com/en/" target="_blank">Huawei Technologies Co., Ltd</a></strong>  
+                        <div><em>Shenzhen, China | Jun 2022 - Jun 2023</em></div>
+                        <ul>
+                            <li>Developed, trained, and tested hypergraph-based clustering and spectrum-ranking ML models on over 70GB of industrial log data.</li>
+                            <li>Built an online, real-time stream-clustering pipeline to address latency issues and scale the model in production.</li>
+                            <li>Co-inventor of a patent: “A Root Cause Analysis System for Software Test Cases” (Publication No. CN116302984A).</li>
+                        </ul>
+                    </li>
 
-  </div>
+                    <!-- Shenzhen Research Institute of Big Data -->
+                    <li>
+                        <strong><a href="http://sribd.cn/en" target="_blank">Shenzhen Research Institute of Big Data</a></strong>  
+                        <div><em>Shenzhen, China | Sep 2021 - May 2023</em></div>
+                        <ul>
+                            <li>Won two rounds of undergraduate research awards under Prof. Pinjia He for anomaly detection and root cause analysis research.</li>
+                            <li>Built a novel regular-expression-based log parser that outperformed 13 major log parsers on 16 public datasets (accuracy & efficiency).</li>
+                            <li>Co-authored a paper on log parsing published in IEEE Transactions on Reliability.</li>
+                        </ul>
+                    </li>
+
+                    <!-- Shenzhen Stock Exchange -->
+                    <li>
+                        <strong><a href="https://www.szse.cn/English/" target="_blank">Shenzhen Stock Exchange</a></strong>  
+                        <div><em>Shenzhen, China | Jun 2021 - Aug 2021</em></div>
+                        <ul>
+                            <li>Crawled textual information from over 30 Chinese financial news websites using the Requests and Beautiful Soup libraries.</li>
+                            <li>Conducted sentiment analysis and text classification on financial news data using NLTK; labeled 20,000+ lines of news data.</li>
+                            <li>Led a team of interns to retrieve, label, and store company data using SQL and MongoDB.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Optional SVG Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003973" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- 7. Core Courses -->
+    <div class="section" id="courses">
+        <div class="content">
+            <div class="text">
+                <h2>Core Courses</h2>
+                <p>The table below highlights my core coursework, categorized by education level and subject area.</p>
+                <table style="width:100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="background-color: #f4f4f4; border-bottom: 2px solid #ddd;">
+                            <th style="padding: 10px; border: 1px solid #ddd;">Education Level</th>
+                            <th style="padding: 10px; border: 1px solid #ddd;">Category</th>
+                            <th style="padding: 10px; border: 1px solid #ddd;">Course Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Graduate Courses -->
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Graduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">CS</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Algorithms For Applications</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Graduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">CS</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Machine Learning Engineering (MLE)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Graduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">CS</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Natural Language Processing (NLP)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Graduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">CS</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Computer Vision (CV)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Graduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">CS</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Building Startup Systems (Full Stack Development)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Graduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">INFO</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">HCI & Design</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Graduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">INFO</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Applied Data & Decision Making</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Graduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">INFO</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">HCI & Design</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Graduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">INFO</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Human Robot Interaction</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Graduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">MBA</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Business Fundamentals</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Graduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">MBA</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">The Business of Gaming</td>
+                        </tr>
+
+                        <!-- Undergraduate Courses -->
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Undergraduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">CS</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Basic Machine Learning (Python)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Undergraduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">CS</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Techniques for Data Mining (Python)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Undergraduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">CS</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Data Structures (Java)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Undergraduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">CS</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Operating Systems (C++)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Undergraduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">CS</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Database System (SQL)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Undergraduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">INFO</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Data Analytics (R)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Undergraduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">INFO</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Data & Knowledge Management (SQL)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Undergraduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">INFO</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Web Analytics & Intelligence (Python)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Undergraduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">MATH</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Discrete Mathematics</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Undergraduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">MATH</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Optimization (MATLAB)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Undergraduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">FINTECH</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Fintech Theory & Practice</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Undergraduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">FINTECH</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Blockchain & Decentralized Applications</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Undergraduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">ECON</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Basic Microeconomics</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Undergraduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">ECON</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Basic Macroeconomics</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Undergraduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">ECON</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Introductory Econometrics</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Undergraduate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">ECON</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Game Theory & Business Strategy</td>
+                        </tr>   
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Optional Icon or Image -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003973" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22,10v6M2,10l10-5l10,5l-10,5z"></path> 
+                <path d="M6,12v5c3,3,9,3,12,0v-5"></path> 
+            </svg>
+        </div> 
+    </div> 
+
+    <!-- 8. Skills & Interests -->
+    <div class="section" id="skills">
+        <div class="content">
+            <div class="text">
+                <h2>Skills & Interests</h2>
+    
+                <!-- Skills Section -->
+                <h3>Skills</h3>
+                <div class="tags-container">
+                    <!-- Programming Languages -->
+                    <span class="tag">Python</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">R</span>
+                    <span class="tag">MATLAB</span>
+                    <span class="tag">Solidity</span>
+    
+                    <!-- Tools & Frameworks -->
+                    <span class="tag">Pandas</span>
+                    <span class="tag">NumPy</span>
+                    <span class="tag">Matplotlib</span>
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">Keras</span>
+                    <span class="tag">Scikit-learn</span>
+                    <span class="tag">OpenAI API</span>
+                    <span class="tag">Visual Studio Code</span>
+                    <span class="tag">Linux</span>
+                    <span class="tag">Vim</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+    
+                    <!-- Areas of Expertise -->
+                    <span class="tag">Algorithms and Data Structures</span>
+                    <span class="tag">Machine Learning (MLE)</span>
+                    <span class="tag">Natural Language Processing (NLP)</span>
+                    <span class="tag">Computer Vision (CV)</span>
+                    <span class="tag">Full-Stack Development (Flask, React)</span>
+                    <span class="tag">Database Management</span>
+                    <span class="tag">Data Analytics</span>
+                </div>
+    
+                <!-- Interests Section -->
+                <h3>Interests</h3>
+                <div class="tags-container">
+                    <!-- Personal and Professional Interests -->
+                    <span class="tag">Semi-Professional Swimming</span>
+                    <span class="tag">Piano</span>
+                    <span class="tag">AI for Software Engineering</span>
+                    <span class="tag">AI for Finance</span>
+                    <span class="tag">Large Language Models (LLMs)</span>
+                    <span class="tag">FinTech</span>
+                    <span class="tag">AIOps</span>
+                </div>
+            </div>
+    
+            <!-- Optional SVG Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003973" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+            </svg>
+    
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Zhijun (Nicholas) Huang. All rights reserved.</p>
+    </footer>
 </body>
 </html>
