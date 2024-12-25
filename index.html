@@ -92,23 +92,94 @@
             color: #007BFF; /* Light blue color on hover */
         }
 
+        .nav-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
         .nav-logo {
             display: flex;
+            justify-content: center; /* Center align icons */
             align-items: center;
-            padding: 5px;
-            transition: background-color 0.3s, transform 0.3s;
+            width: 40px; /* Set a fixed width for square appearance */
+            height: 40px; /* Set a fixed height for square appearance */
+            border-radius: 5px; /* Optional: Add rounded corners */
+            margin: 5px auto; /* Center icons vertically with some spacing */
         }
 
         .nav-logo img {
-            width: 24px; /* Adjust size of logos */
+            width: 24px; /* Adjust icon size */
             height: 24px;
-            margin: 0 10px; /* Space between logos */
         }
 
         .nav-logo:hover {
             background: #ffffff; /* White background on hover */
             border-radius: 5px;
             transform: scale(1.1); /* Slight zoom effect on hover */
+        }
+
+         /* Hamburger Menu Styling */
+        .hamburger-menu {
+            display: none; /* Hidden by default */
+            font-size: 24px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hidden by default on small screens */
+                flex-direction: column; /* Stack links vertically */
+                align-items: stretch; /* Make links take full width */
+                background-color: #003973; /* Match nav bar background */
+                position: absolute; /* Position dropdown menu */
+                top: 50px; /* Below the nav bar */
+                left: 0;
+                width: 100%; /* Full width dropdown */
+                padding: 10px 0;
+                z-index: 9999; /* Ensure it appears above other content */
+            }
+
+            .nav-links a {
+                display: block; /* Ensure each link takes up its own row */
+                padding: 15px; /* Add padding for easier tapping */
+                text-align: center; /* Center-align text in each row */
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Add separators between links */
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none; /* Remove border from the last link */
+            }
+
+            .hamburger-menu {
+                display: block; /* Show hamburger menu on small screens */
+                font-size: 24px;
+                color: #ffffff;
+                cursor: pointer;
+            }
+
+            .nav-logo {
+                display: flex; /* Ensure icons remain flex containers */
+                justify-content: center; /* Center icons horizontally */
+                align-items: center; /* Center icons vertically */
+                width: 40px; /* Fixed square size for icons */
+                height: 40px;
+                margin: 10px 0; /* Add spacing between icons in the menu */
+            }
+
+            .nav-logo img {
+                width: 24px;
+                height: 24px;
+            }
         }
 
 
@@ -221,6 +292,7 @@
     </style>
 </head>
 <body>
+
     <!-- 1. Hero-Header -->
     <div class="hero-header">
         <h1>Zhijun (Nicholas) Huang</h1>
@@ -232,20 +304,24 @@
 
     <!-- 2. Nav Bar -->
     <nav class="sticky-nav">
-        <a href="#about" title="About Me">👤About</a>
-        <a href="#personal_projects" title="Personal Projects">💻Projects</a>
-        <a href="#industry_experience" title="Industry Experience">🏢Experience</a>
-        <a href="#publications" title="Patent & Publication">📄Publication</a>
-        <a href="#courses" title="Core Courses">📚Courses</a>
-        <a href="#skills" title="Skills & Interests">🛠️Skills</a>
-
-        <!-- External Links -->
-        <a href="https://github.com/NIC397" class="nav-logo" target="_blank" title="GitHub">
-            <img src="images/github_logo.webp" alt="GitHub Logo">
-        </a>
-        <a href="https://www.linkedin.com/in/nicholas-zhijun-huang/" class="nav-logo" target="_blank" title="LinkedIn">
-            <img src="images/linkedin_logo.png" alt="LinkedIn Logo">
-        </a>
+        <div class="nav-container">
+            <span class="hamburger-menu" onclick="toggleMenu()">☰</span>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" title="About Me">👤 About</a>
+                <a href="#personal_projects" title="Personal Projects">💻 Projects</a>
+                <a href="#industry_experience" title="Industry Experience">🏢 Experience</a>
+                <a href="#publications" title="Patent & Publication">📄 Publications</a>
+                <a href="#courses" title="Core Courses">📚 Courses</a>
+                <a href="#skills" title="Skills & Interests">🛠️ Skills</a>
+            </div>
+            <!-- External Links -->
+            <a href="https://github.com/NIC397" class="nav-logo" target="_blank" title="GitHub">
+                <img src="images/github_logo.webp" alt="GitHub Logo">
+            </a>
+            <a href="https://www.linkedin.com/in/nicholas-zhijun-huang/" class="nav-logo" target="_blank" title="LinkedIn">
+                <img src="images/linkedin_logo.png" alt="LinkedIn Logo">
+            </a>
+        </div>
     </nav>
 
     
@@ -637,4 +713,24 @@
         <p>&copy; 2024 Zhijun (Nicholas) Huang. All rights reserved.</p>
     </footer>
 </body>
+<!-- JavaScript for Toggling Menu -->
+<script>
+    function toggleMenu() {
+        const navLinks = document.getElementById("navLinks");
+        navLinks.style.display = navLinks.style.display === "block" ? "none" : "block";
+    }
+
+    // Ensure proper display of nav-links on window resize
+    window.addEventListener("resize", () => {
+        const navLinks = document.getElementById("navLinks");
+        if (window.innerWidth > 768) {
+            // Show nav-links for larger screens
+            navLinks.style.display = "flex";
+        } else {
+            // Hide nav-links for smaller screens if not toggled
+            navLinks.style.display = "none";
+        }
+    });
+</script>
+
 </html>
