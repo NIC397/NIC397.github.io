@@ -220,6 +220,27 @@
             font-size: 1.8em;
             color: #003973;
         }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+        }
+
+        .project-card p {
+            margin-bottom: 10px;
+        }
         .section ul, .section li {
             font-family: 'Montserrat', sans-serif;
             color: #333; /* Ensure consistent text color */
@@ -344,47 +365,38 @@
             <div class="text">
                 <h2>Personal Projects</h2>
                 <p>The projects showcased below are mostly self-initiated and inspired by my personal interests. They represent my ongoing efforts to learn, experiment, and apply technology to areas that intrigue me, while continually improving my skills and understanding.</p>
-                <ul>
-                    <!-- Original Version -->
-                    <li>
-                        <strong><h3>SentenSnap (Original Version)</h3></strong>
-                        An interactive web application that combines natural language processing and AI-powered image generation to provide a unique and educational experience. Users can explore random quotes, learn word definitions, and generate artistic images based on sample sentences.
-                        <br>
-                        <strong>Repository:</strong> <a href="https://github.com/NIC397/SentenSnap" target="_blank">GitHub Repo</a> |
-                        <strong>Demo:</strong> <a href="https://drive.google.com/file/d/1bS60yIwac_HjMKcWQC2d3y5IwRJ2ALyW/view?usp=sharing" target="_blank">Video Link</a>
-                    </li>
-
-                    <!-- Deployed Version -->
-                    <li>
-                        <strong><h3>SentenSnap (Deployed Version)</h3></strong>
-                        This application is a modified version of the <a href="https://github.com/NIC397/SentenSnap" target="_blank" title="SentenSnap">SentenSnap</a> repository, originally built to operate with locally installed large language models (LLMs).. The current version leverages <a href="https://streamlit.io/" target="_blank">Streamlit</a> for its user interface and integrates the <a href="https://ai.google.dev/gemini-api/docs/api-key" target="_blank">Gemini API</a> to deliver a fully deployed, cloud-based experience. While the image generation functionality from the original version has been omitted, this modification focuses on providing seamless access to motivational quotes and interactive word snapshots without requiring local LLM installations.
-                        <br>
-                        <strong>Repository:</strong> <a href="https://github.com/NIC397/SentenSnap_Deploy" target="_blank">GitHub Repo</a> |
-                        <strong>Deployed App:</strong> <a href="https://sentensnap.streamlit.app/" target="_blank">APP</a>
-                    </li>
-
-                    <!-- Additional Projects -->
-                    <li>
-                        <strong><h3>Tank of Tanks</h3></strong>
-                        A 4-player local multiplayer tank battle game built with Python and Pygame. Players control mini tanks, spin to aim, and fire bullets to eliminate opponents. The game features dynamic gameplay with tank collisions, spinning mechanics, health bars, and an exciting victory screen. The last tank standing wins! This project is inspired by the original "Tank of Tanks Battle" game by Orion Game.
-                        <br>
-                        <strong>Repository:</strong> <a href="https://github.com/NIC397/Tank_of_Tanks" target="_blank">GitHub Repo</a> |
-                        <strong>Deployed App:</strong> <a href="https://trinket.io/pygame/5e137a431c01?outputOnly=true&showInstructions=true" target="_blank">APP</a>
-                    </li>
-
-                    <li>
-                        <strong><h3>Modified Snake Game</h3></strong>
-                        This is an exciting variation of the classic Snake game, implemented in Python using the Turtle graphics library. In this version, you control a snake that must eat numbered food items while avoiding a pursuing monster.
-                        <br>
-                        <strong>Repository:</strong> <a href="https://github.com/NIC397/snake-game" target="_blank">GitHub Repo</a>
-                    </li>
-
-                    <li>
-                        <strong><h3>Number Guessing Game</h3></strong>
-                        A simple yet engaging Number Guessing Game with a graphical user interface built using Python and Tkinter.
-                        <strong>Repository:</strong> <a href="https://github.com/NIC397/number-guessing-game" target="_blank">GitHub Repo</a>
-                    </li>
-                </ul>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>SentenSnap (Original Version)</h3>
+                        <p>An interactive web application that combines natural language processing and AI-powered image generation to provide a unique and educational experience. Users can explore random quotes, learn word definitions, and generate artistic images based on sample sentences.</p>
+                        <p><strong>Repository:</strong> <a href="https://github.com/NIC397/SentenSnap" target="_blank">GitHub Repo</a> | <strong>Demo:</strong> <a href="https://drive.google.com/file/d/1bS60yIwac_HjMKcWQC2d3y5IwRJ2ALyW/view?usp=sharing" target="_blank">Video Link</a></p>
+                    </div>
+                    <div class="project-card">
+                        <h3>SentenSnap (Deployed Version)</h3>
+                        <p>This application is a modified version of the <a href="https://github.com/NIC397/SentenSnap" target="_blank" title="SentenSnap">SentenSnap</a> repository, originally built to operate with locally installed large language models (LLMs). The current version leverages <a href="https://streamlit.io/" target="_blank">Streamlit</a> for its user interface and integrates the <a href="https://ai.google.dev/gemini-api/docs/api-key" target="_blank">Gemini API</a> to deliver a fully deployed, cloud-based experience. While the image generation functionality from the original version has been omitted, this modification focuses on providing seamless access to motivational quotes and interactive word snapshots without requiring local LLM installations. In addition to quotes, this version also offers generated knowledge capsules and book excerpts for learners to read and expand their vocabulary.</p>
+                        <p><strong>Repository:</strong> <a href="https://github.com/NIC397/SentenSnap_Deploy" target="_blank">GitHub Repo</a> | <strong>Deployed App:</strong> <a href="https://sentensnap.streamlit.app/" target="_blank">APP</a></p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Trulingo</h3>
+                        <p>Trulingo is a multilingual news aggregator and fact-checking tool that retrieves and processes articles from various news sources. It supports both English and Chinese news sources and performs LLM analysis and comparison using the Gemini API.</p>
+                        <p><strong>Repository:</strong> <a href="https://github.com/NIC397/Trulingo" target="_blank">GitHub Repo</a> | <strong>Deployed App:</strong> <a href="https://trulingo.streamlit.app/" target="_blank">APP</a></p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Tank of Tanks</h3>
+                        <p>A 4-player local multiplayer tank battle game built with Python and Pygame. Players control mini tanks, spin to aim, and fire bullets to eliminate opponents. The game features dynamic gameplay with tank collisions, spinning mechanics, health bars, and an exciting victory screen. The last tank standing wins! This project is inspired by the original <a href="https://apps.apple.com/us/app/tank-of-tanks-battle/id1037969174?" target="_blank">Tank of Tanks Battle</a> game by Orion Game.</p>
+                        <p><strong>Repository:</strong> <a href="https://github.com/NIC397/Tank_of_Tanks" target="_blank">GitHub Repo</a> | <strong>Deployed App:</strong> <a href="https://trinket.io/pygame/5e137a431c01?outputOnly=true&showInstructions=true" target="_blank">APP</a></p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Modified Snake Game</h3>
+                        <p>This is an exciting variation of the classic Snake game, implemented in Python using the Turtle graphics library. In this version, you control a snake that must eat numbered food items while avoiding a pursuing monster.</p>
+                        <p><strong>Repository:</strong> <a href="https://github.com/NIC397/snake-game" target="_blank">GitHub Repo</a></p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Number Guessing Game</h3>
+                        <p>A simple yet engaging Number Guessing Game with a graphical user interface built using Python and Tkinter.</p>
+                        <p><strong>Repository:</strong> <a href="https://github.com/NIC397/number-guessing-game" target="_blank">GitHub Repo</a>
+                    </div>
+                </div>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="9" y1="18" x2="15" y2="18"></line>
@@ -717,7 +729,9 @@
 <script>
     function toggleMenu() {
         const navLinks = document.getElementById("navLinks");
-        navLinks.style.display = navLinks.style.display === "block" ? "none" : "block";
+        if (window.innerWidth <= 768) {
+            navLinks.style.display = navLinks.style.display === "block" ? "none" : "block";
+        }
     }
 
     // Ensure proper display of nav-links on window resize
